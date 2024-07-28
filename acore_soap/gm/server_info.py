@@ -76,11 +76,11 @@ class ServerInfoResponse(GMCommandResponse):
         return total_seconds
 
     @classmethod
-    def from_soap_response(self, res: SOAPResponse):
-        connected_players = self.extract_connected_players(res.message)
-        characters_in_world = self.extract_characters_in_world(res.message)
-        server_uptime = self.extract_server_uptime(res.message)
-        return ServerInfoResponse(
+    def from_soap_response(cls, res: SOAPResponse):
+        connected_players = cls.extract_connected_players(res.message)
+        characters_in_world = cls.extract_characters_in_world(res.message)
+        server_uptime = cls.extract_server_uptime(res.message)
+        return cls(
             connected_players=connected_players,
             characters_in_world=characters_in_world,
             server_uptime=server_uptime,
