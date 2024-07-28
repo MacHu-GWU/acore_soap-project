@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from acore_soap.gm.service_info import ServerInfoRequest, ServerInfoResponse
+from acore_soap.gm.server_info import ServerInfoRequest, ServerInfoResponse
 
 
 def test():

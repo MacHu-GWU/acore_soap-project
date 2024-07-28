@@ -54,10 +54,10 @@ class ServerInfoResponse(GMCommandResponse):
         """
         Extract the server uptime from the response message.
         """
-        P_SECOND = re.compile("(\d+\s+second\(s\))")
-        P_MINUTE = re.compile("(\d+\s+minute\(s\))")
-        P_HOUR = re.compile("(\d+\s+hour\(s\))")
-        P_DAY = re.compile("(\d+\s+day\(s\))")
+        P_SECOND = re.compile(r"(\d+\s+second\(s\))")
+        P_MINUTE = re.compile(r"(\d+\s+minute\(s\))")
+        P_HOUR = re.compile(r"(\d+\s+hour\(s\))")
+        P_DAY = re.compile(r"(\d+\s+day\(s\))")
 
         def extract(p: re.Pattern, message: str) -> int:
             res = re.findall(p, message)

@@ -8,5 +8,5 @@ Usage::
 
 from .base import GMCommandRequest
 from .base import GMCommandResponse
-from .service_info import ServerInfoRequest
-from .service_info import ServerInfoResponse
+from .server_info import ServerInfoRequest
+from .server_info import ServerInfoResponse
