@@ -1,7 +1,15 @@
 # -*- coding: utf-8 -*-
 
 """
-todo: docstring
+Usage:
+
+    >>> import acore_soap.api as acore_soap
+    >>> request = acore_soap.gm.CreateAccountRequest(
+    ...     account="testacc",
+    ...     password="testpass",
+    ... )
+    >>> soap_response = request.send()
+    >>> response = acore_soap.gm.CreateAccountResponse.from_soap_response(soap_response)
 """
 
 import re

@@ -1,7 +1,18 @@
 # -*- coding: utf-8 -*-
 
 """
-todo: docstring
+Usage:
+
+    >>> import acore_soap.api as acore_soap
+    >>> request = acore_soap.gm.ServerInfoRequest()
+    >>> soap_response = request.send()
+    >>> response = acore_soap.gm.ServerInfoResponse.from_soap_response(soap_response)
+    >>> response.connected_players
+    1
+    >>> response.characters_in_world
+    1
+    >>> response.server_uptime
+    3600
 """
 
 import re
@@ -92,5 +103,6 @@ class ServerInfoRequest(GMCommandRequest):
     """
     Generate the command to get server information.
     """
+
     def to_command(self) -> str:
         return ".server info"
