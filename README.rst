@@ -59,6 +59,11 @@ Welcome to ``acore_soap`` Documentation
 
 我创造了一整套工具用于实现这个需求. 其中这个 ``acore_soap`` 项目是这一整套工具的基石. 在应用层, 它提供了一套 Pythonic 的 API 用参数化的方式发送 GM 命令, 并将返回的信息解析成机器友好的 Python 对象. 在底层, 它提供了一套 ``SOAPRequest`` 和 ``SOAPResponse`` 的抽象, 实现了发送 command 和获取 response message 的核心逻辑. 你可以用这个基石来构建更高级的应用, 例如一个 Web 服务器, 一个 Discord Bot 等等.
 
+和这个项目相关的其他项目有:
+
+- `acore_soap_agent <https://github.com/MacHu-GWU/acore_soap_agent-project>`_: 一个部署在游戏服务器 EC2 上的 CLI 程序, 作为外部程序远程执行 GM 命令的代理.
+- `acore_soap_remote <https://github.com/MacHu-GWU/acore_soap_remote-project>`_: 一个在除了游戏服务器 EC2 以外的任何地方其他地方远程执行 GM 命令的 SDK.
+
 
 .. _install:
 
