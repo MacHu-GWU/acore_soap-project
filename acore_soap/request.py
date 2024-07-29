@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 
 import requests
 
-from .exc import SOAPResponseParseError
+from .exc import SOAPResponseParseError, SOAPCommandFailedError
 
 
 # ------------------------------------------------------------------------------
@@ -201,3 +201,21 @@ class SOAPResponse(Base):
         Print the dataclass, ignore the raw response body.
         """
         print({"succeeded": self.succeeded, "message": self.message})
+
+
+def ensure_response_succeeded(
+    request: SOAPRequest,
+    response: SOAPResponse,
+    raises: bool,
+):
+    """
+    Ensure the response succeeded, otherwise raise an exception.
+    """
+    if response.succeeded:
+        return response
+    else:
+        if raises:
+            raise SOAPCommandFailedError(
+                f"request failed: {request.command!r}, "
+                f"response: {response.message!r}"
+            )
